@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Red vožnje</title>
+	</head>
+	<body>
+		<form method="post" action="Voznje/Create">
+			<table>
+				<tr>
+					<td>Linija:</td>
+					<td>
+						<select>
+							<option>odaberi</option>
+							<option>1</option>
+							<option>2</option>
+							<option>21</option>
+						</select>
+					</td>
+				</tr>
+				<tr><td>Smer:</td><td><span>A</span><input type="radio" name="smer" value=""/><span>B</span><input type="radio" name="smer" value=""/></td></tr>
+				<tr><td>Polazak:</td><td><input type="time" name="polazak" value=""></td></tr>
+				<tr><td></td><td><input type="submit" value="Dodaj"/></td></tr>
+			</table>
+		</form>
+		<hr/>
+		<h2>Red vožnje</h2>
+		<table>
+			<tr><th>Linija</th><th>Smer</th><th>Polazak</th><th>Red vožnje</th></tr>
+			<tr><td align="center">1</td><td>A (Klisa - Liman 1)</td><td align="center">08:00</td><td>gradski</td></tr>
+			<tr><td align="center">1</td><td>A (Klisa - Liman 1)</td><td align="center">09:00</td><td>gradski</td></tr>
+			<tr><td align="center">1</td><td>B (Liman 1 - Klisa)</td><td align="center">08:10</td><td>gradski</td></tr>
+			<tr><td align="center">1</td><td>B (Liman 1 - Klisa)</td><td align="center">09:10</td><td>gradski</td></tr>
+			<tr><td align="center">2</td><td>A (Centar - Novo naselje)</td><td align="center">08:05</td><td>gradski</td></tr>
+			<tr><td align="center">2</td><td>A (Centar - Novo naselje)</td><td align="center">09:05</td><td>gradski</td></tr>
+			<tr><td align="center">2</td><td>B (Novo naselje - Centar)</td><td align="center">08:15</td><td>gradski</td></tr>
+			<tr><td align="center">2</td><td>B (Novo naselje - Centar)</td><td align="center">09:15</td><td>gradski</td></tr>
+			<tr><td align="center">21</td><td>A (Centar - Šangaj)</td><td align="center">08:15</td><td>prigradski</td></tr>
+			<tr><td align="center">21</td><td>A (Centar - Šangaj)</td><td align="center">09:15</td><td>prigradski</td></tr>
+			<tr><td align="center">21</td><td>B (Šangaj - Centar)</td><td align="center">08:15</td><td>prigradski</td></tr>
+			<tr><td align="center">21</td><td>B (Šangaj - Centar)</td><td align="center">09:15</td><td>prigradski</td></tr>
+		</table>
+	</body>
+</html>

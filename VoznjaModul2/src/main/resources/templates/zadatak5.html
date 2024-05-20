@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Voznje</title>
+</head>
+<body>
+
+<form>
+	<table>
+	<caption>Voznje</caption>
+	<tbody>
+		<tr>
+			<th>ID</th>
+			<th>LinijaId</th>
+			<th>Smer</th>
+			<th>Polazak</th>
+		</tr>
+		<tr>
+			<th></th>
+			<th>
+				<input type="number" name="linijaId" value="${v.linija.id}" >
+			</th>
+			<th></th>
+			<th></th>
+			<th>
+				<input type="submit" value="Pretrazi" />
+			</th>
+		</tr>
+		<tr th:each="v: ${voznje}">
+			<td th:text="${v.id}"></td>
+			<td th:text="${v.linija.id}"></td>
+			<td th:text="${v.smer}"></td>
+			<td th:text="${v.polazak}"></td>
+		</tr>
+	</tbody>
+</table>
+</form>
+
+</body>
+</html>

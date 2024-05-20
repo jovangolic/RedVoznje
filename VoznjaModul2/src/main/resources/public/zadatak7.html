@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="ISO-8859-1">
+	<title>Linije</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script defer src="js/zadatak6.js" type="text/javascript"></script>
+	<script defer src="js/addLinija.js" type="text/javascript"></script>
+</head>
+<body>
+<form id="mojaForma" method="post">
+	<table>
+		<tbody>
+			<tr>
+				<td>Redni broj:</td>
+				<td>
+					<input type="number" name="redni_broj" />
+				</td>
+			</tr>
+			<tr>
+				<td>Polaziste:</td>
+				<td>
+					<input type="text" name="polaziste" />
+				</td>
+			</tr>
+			<tr>
+				<td>Odrediste:</td>
+				<td>
+					<input type="text" name="odrediste" />
+				</td>
+			</tr>
+			<tr>
+				<td>Gradski:</td>
+				<td>
+					<input type="checkbox" />
+				</td>
+			</tr>
+			<tr>
+				<td></td>
+				<td>
+					<!--<input type="submit" value="Dodaj" /> -->
+					<button type="button" onclick="validirajFormu()">Posalji</button>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</form>
+
+
+<hr>
+<h2>Postojece linije</h2>
+<table>
+	<thead>
+		<tr>
+			<th>ID</th>
+			<th>Redni broj</th>
+			<th>Polaziste</th>
+			<th>Odrediste</th>
+			<th>Gradski</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr th:each="l : ${linije.entrySet}">
+			<td th:text="${l.key}">ID</td>
+			<td th:text="${l.value.redni_broj}">Redni Broj</td>
+			<td th:text="${l.value.polaziste}">Polaziste</td>
+			<td th:text="${l.value.odrediste}">Odrediste</td>
+			<td th:text="${l.value.gradski}">Gradski</td>
+		</tr>
+	</tbody>
+</table>
+<!--
+<h2>Forma</h2>
+<form id="mojaForma">
+	<label for="redni_broj">Redni broj:</label>
+	<input type="number" id="redni_broj" name="redni_broj" /><br/>
+	<label for="polaziste">Polaziste:</label>
+	<input type="text" id="polaziste" name="polaziste" /><br/>
+	<label for="odrediste">Odrediste:</label>
+	<input type="text" id="odrediste" name="odrediste" /><br/>
+	<label for="gradski">Red voznje:</label>
+	<input type="checkbox" id="gradski" name="gradski" checked /><br/>
+	<button type="button" onclick="validirajFormu()">Posalji</button>
+</form>  -->
+
+<h2>Dodavanje nove linije</h2>
+
+<form id="dodajLiniju">
+    <label for="redni_broj">Redni broj:</label><br>
+    <input type="number" id="redni_broj" name="redni_broj" required><br>
+    
+    <label for="polaziste">Polaziste:</label><br>
+    <input type="text" id="polaziste" name="polaziste" required><br>
+    
+    <label for="odrediste">Odrediste:</label><br>
+    <input type="text" id="odrediste" name="odrediste" required><br>
+    
+    <label for="gradski">Gradski:</label><br>
+    <select id="gradski" name="gradski" required>
+        <option value="true">Da</option>
+        <option value="false">Ne</option>
+    </select><br><br>
+    
+    <button type="submit">Dodaj liniju</button>
+</form>
+</body>
+</html>
